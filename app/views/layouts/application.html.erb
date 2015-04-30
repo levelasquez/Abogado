@@ -7,8 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<a href="#" class="navbar-brand">Abogados</a>
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Archivos<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+			            <li><a href="#">Clientes</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#"><%= link_to "Abogados", abogado_ps_path %></a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">Tribunales</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">Expedientes</a></li>
+			        </ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Expedientes<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+			            <li><a href="#">Judiciales</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#"><%= link_to "Extra Judiciales" %></a></li>
+			        </ul>
+				</li>
+				<li><%= link_to "Agenda" %></li>
+				<li><%= link_to "Configuración" %></li>
+			</ul>
+		</div>
+	</div>
+	<%= yield %>
 
 </body>
 </html>

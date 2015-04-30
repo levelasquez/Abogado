@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @abogado_p.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @abogado_p.apellido %>
+</p>
+
+<p>
+  <strong>Ipsa:</strong>
+  <%= @abogado_p.ipsa %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @abogado_p.telefono %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @abogado_p.direccion %>
+</p>
+
+<p>
+  <strong>Cedula:</strong>
+  <%= @abogado_p.cedula %>
+</p>
+
+<%= link_to 'Edit', edit_abogado_p_path(@abogado_p) %> |
+<%= link_to 'Back', abogado_ps_path %>
