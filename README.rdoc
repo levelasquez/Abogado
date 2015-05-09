@@ -8,7 +8,7 @@ Sistema libre para ser usado por cualquiera.
 
 == Version 0.0.1
 
-* Creación del Proyecto.
+* Creación del proyecto.
 
 == Versión 0.1.0
 
@@ -20,15 +20,31 @@ Modificado/a:
 
 Añadido/a:
 
-* Menú Principal.
+* Menú principal.
 * Bootstrap. css - js - fonts.
-* Modulo de Abogados: {
-	* Nueva tabla a la base de datos. Abogados.
-	* Mostar - Crear - Editar y Eliminar Abogados.
-	* Validaciones para Abogados.
-	* Mensajes de Alerta y Noticifación para Abogados.
+* Modulo de abogados: {
+	* Nueva tabla a la base de datos. "abogado_ps"
+	* Mostar - crear - editar y eliminar abogados.
+	* Validaciones para abogados.
+	* Mensajes de alerta y noticifación para abogados.
 }
 
 Eliminado/a:
 
 * Css del scaffold de abogados.
+
+== Versión 0.2.0
+
+Modificado/a:
+
+* Rutas de acceso
+* Tablas en la base de datos
+* Vista principal de la aplicación
+
+Añadido/a:
+
+* Módulo de tribunales:
+	* Nueva tabla en la base de datos. "tribunals".
+	* Mostrar - crear - editar y eliminar tribunales.
+	* Validaciones para tribunales.
+	* Mensajes de alerta y notificación para tribunales.

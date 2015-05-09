@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427123714) do
+ActiveRecord::Schema.define(version: 20150430142815) do
 
   create_table "abogado_ps", force: true do |t|
     t.string   "nombre"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20150427123714) do
     t.integer  "telefono"
     t.text     "direccion"
     t.integer  "cedula"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tribunals", force: true do |t|
+    t.string   "area"
+    t.string   "instancia"
+    t.string   "tipo"
+    t.string   "juez"
+    t.text     "direccion"
+    t.integer  "telefono"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

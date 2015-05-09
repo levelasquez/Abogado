@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tribunals
+
   resources :abogado_ps
 
   # The priority is based upon order of creation: first created -> highest priority.
