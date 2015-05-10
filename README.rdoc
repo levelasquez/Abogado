@@ -23,7 +23,7 @@ Añadido/a:
 * Menú principal.
 * Bootstrap. css - js - fonts.
 * Modulo de abogados: {
-	* Nueva tabla a la base de datos. "abogado_ps"
+	* Nueva tabla a la base de datos. "abogado_ps".
 	* Mostar - crear - editar y eliminar abogados.
 	* Validaciones para abogados.
 	* Mensajes de alerta y noticifación para abogados.
@@ -37,9 +37,9 @@ Eliminado/a:
 
 Modificado/a:
 
-* Rutas de acceso
-* Tablas en la base de datos
-* Vista principal de la aplicación
+* Rutas de acceso.
+* Tablas en la base de datos.
+* Vista principal de la aplicación.
 
 Añadido/a:
 
@@ -48,3 +48,20 @@ Añadido/a:
 	* Mostrar - crear - editar y eliminar tribunales.
 	* Validaciones para tribunales.
 	* Mensajes de alerta y notificación para tribunales.
+
+== Versión 0.3.0
+
+Modificado/a:
+
+* Validaciones para el modelo de abogado_p.
+* Vista principal de la aplicación.
+* Rutas de acceso.
+* Tablas en la base de datos.
+
+Añadido/a:
+
+* Módulo de clientes:
+	1. Nueva tabla en la base de datos. "clientes".
+	2. Mostrar - crear - editar y eliminar clientes.
+	3. Validaciones para clientes.
+	4. Mensajes de alerta y notificación para clientes.

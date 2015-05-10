@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :clientes
+
   resources :tribunals
 
   resources :abogado_ps
