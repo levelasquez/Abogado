@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @tribunal.area %>
+</p>
+
+<p>
+  <strong>Instancia:</strong>
+  <%= @tribunal.instancia %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @tribunal.tipo %>
+</p>
+
+<p>
+  <strong>Juez:</strong>
+  <%= @tribunal.juez %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @tribunal.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @tribunal.telefono %>
+</p>
+
+<%= link_to 'Edit', edit_tribunal_path(@tribunal) %> |
+<%= link_to 'Back', tribunals_path %>
