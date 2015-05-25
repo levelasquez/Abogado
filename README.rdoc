@@ -22,12 +22,11 @@ Añadido/a:
 
 * Menú principal.
 * Bootstrap. css - js - fonts.
-* Modulo de abogados: {
+* Modulo de abogados:
 	* Nueva tabla a la base de datos. "abogado_ps".
 	* Mostar - crear - editar y eliminar abogados.
 	* Validaciones para abogados.
 	* Mensajes de alerta y noticifación para abogados.
-}
 
 Eliminado/a:
 
@@ -65,3 +64,19 @@ Añadido/a:
 	2. Mostrar - crear - editar y eliminar clientes.
 	3. Validaciones para clientes.
 	4. Mensajes de alerta y notificación para clientes.
+
+== Versión 0.4.0
+
+Modificado/a:
+
+1. Modelo, vista y controlador de clientes para trabajar con los expedientes anidados.
+2. Vista principal de la aplicación.
+3. Rutas para trabajar con los expedientes anidados en clientes.
+
+Añadido/a:
+
+1. Módulo de expedientes:
+	* Nueva tabla en la base de datos. "expedientes".
+	* Mostar - crear - editar y eliminar expedientes.
+	* Validaciones para expedientes.
+	* Mensajes de alerta y notificacion para expedientes.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509124734) do
+ActiveRecord::Schema.define(version: 20150522211410) do
 
   create_table "abogado_ps", force: true do |t|
     t.string   "nombre"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 20150509124734) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "expedientes", force: true do |t|
+    t.integer  "cliente_id"
+    t.string   "expediente"
+    t.string   "area"
+    t.string   "victima"
+    t.string   "imputado"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "descripcion"
+    t.integer  "status"
+  end
+
+  add_index "expedientes", ["cliente_id"], name: "index_expedientes_on_cliente_id"
 
   create_table "tribunals", force: true do |t|
     t.string   "area"

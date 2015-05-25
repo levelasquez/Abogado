@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clientes:</strong>
+  <%= @expediente.cliente %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @expediente.cliente_id %>
+</p>
+
+<p>
+  <strong>Expediente:</strong>
+  <%= @expediente.expediente %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @expediente.area %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @expediente.descripcion %>
+</p>
+
+<p>
+  <strong>Victima:</strong>
+  <%= @expediente.victima %>
+</p>
+
+<p>
+  <strong>Imputado:</strong>
+  <%= @expediente.imputado %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @expediente.status %>
+</p>
+
+<%= link_to 'Edit', edit_cliente_expediente_path(@cliente, @expediente) %> |
+<%= link_to 'Back', expedientes_path %>

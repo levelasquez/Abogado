@@ -10,6 +10,7 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.json
   def show
+    @expediente = Expediente.new
   end
 
   # GET /clientes/new
@@ -42,7 +43,7 @@ class ClientesController < ApplicationController
   def update
     respond_to do |format|
       if @cliente.update(cliente_params)
-        format.html { redirect_to clientes_path, notice: 'El cliente se ha actualizado correctamente.' }
+        format.html { redirect_to @cliente, notice: 'El cliente se ha actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @cliente }
       else
         format.html { render :edit }

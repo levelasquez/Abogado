@@ -29,6 +29,7 @@
           <td><%= cliente.telefono %></td>
           <td><%= cliente.correo %></td>
           <td><%= cliente.direccion %></td>
+          <td><%= link_to 'Expte', cliente, class: "btn btn-info"%></td>
           <td><%= link_to 'Editar', edit_cliente_path(cliente), class: "btn btn-warning" %></td>
           <td><%= link_to 'Eliminar', cliente, class: "btn btn-danger", method: :delete, data: { confirm: 'Estás seguro?' } %></td>
         </tr>

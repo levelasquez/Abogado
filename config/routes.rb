@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :clientes
+  get "/expedientes", to: "expedientes#index"
+
+  resources :expedientes, only: [:index]
+
+  resources :clientes do
+    resources :expedientes
+  end
 
   resources :tribunals
 
