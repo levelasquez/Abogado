@@ -13,8 +13,6 @@ class Cliente < ActiveRecord::Base
 	validates :correo, presence: {message: "no puede estar vacio"},
 					   format: {:with => CORREO_VALIDO, message: "El formato del correo es invalido"}
 	validates :direccion, presence: {message: "no puede estar vacio"}
-<<<<<<< HEAD
+
 	has_many :expedientes
-=======
->>>>>>> f0e8b263a068132c143ff12a6b436b4fe1cac441
 end
