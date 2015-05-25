@@ -44,6 +44,7 @@ class ClientesController < ApplicationController
     respond_to do |format|
       if @cliente.update(cliente_params)
         format.html { redirect_to @cliente, notice: 'El cliente se ha actualizado correctamente.' }
+        format.html { redirect_to clientes_path, notice: 'El cliente se ha actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @cliente }
       else
         format.html { render :edit }

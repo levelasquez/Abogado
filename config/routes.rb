@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :clientes do
     resources :expedientes
   end
+  resources :clientes
 
   resources :tribunals
 
