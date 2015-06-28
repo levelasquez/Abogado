@@ -1,41 +1,68 @@
-<%= form_for(@tribunal) do |f| %>
-  <% if @tribunal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tribunal.errors.count, "errore") %> antes de guardar:</h2>
+<%= form_for(@tribunal, html: { class: "form-horizontal" }) do |f| %>
 
-      <ul>
-      <% @tribunal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% if @tribunal.errors.any? %>
+    <div class="col-xs-11 col-xs-offset-1">
+        <div id="error_explanation" class="panel panel-danger">
+          <div class="panel-heading">
+            <%= pluralize(@tribunal.errors.count, "errore") %> antes de guardar:
+          </div>
+            
+          <div class="panel-body">
+            <ul>
+            <% @tribunal.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
   <% end %>
+
   <div class="form-group">
-    <%= f.label :area, class: "col-sm-2 control-label" %>
-    <%= f.select :area, options_for_select([["Administrativo"], ["Agrario"], ["Civil"], ["Contensioso"], ["Laboral"], ["Lopnna"], ["Mercantil"], ["Penal"]]), class: "col-sm-10 form-contol" %><br>
+    <%= f.label :area, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.select :area, options_for_select([["Administrativo"], ["Agrario"], ["Civil"], ["Contensioso"], ["Laboral"], ["Lopnna"], ["Mercantil"], ["Penal"]]), {}, {class: "form-control"} %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :instancia, class: "col-sm-2 control-label" %>
-    <%= f.select :instancia, options_for_select([["Primera Instancia"], ["Segunda Instancia"], ["Casación"]]), class: "col-sm-10 form-contol" %><br>
+    <%= f.label :instancia, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.select :instancia, options_for_select([["Primera Instancia"], ["Segunda Instancia"], ["Casación"]]), {}, {class: "form-control"} %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :tipo, class: "col-sm-2 control-label" %>
-    <%= f.select :tipo, options_for_select([["Control I"], ["Control II"], ["Control III"], ["Juicio I"], ["Juicio II"], ["Juicio II"], ["Ejecución"]]), class: "col-sm-10 form-contol" %><br>
+    <%= f.label :tipo, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.select :tipo, options_for_select([["Control I"], ["Control II"], ["Control III"], ["Juicio I"], ["Juicio II"], ["Juicio II"], ["Ejecución"]]), {}, {class: "form-control"}%>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :juez, class: "col-sm-2 control-label" %>
-    <%= f.text_field :juez, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :juez, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :juez, placeholder: "Nombre y Apellido", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :telefono, class: "col-sm-2 control-label" %>
-    <%= f.text_field :telefono, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :telefono, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :telefono, placeholder: "Telefono", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :direccion, class: "col-sm-2 control-label" %>
-    <%= f.text_area :direccion, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :direccion, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_area :direccion, placeholder: "Direccion", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.submit "Aceptar", class: "col-sm-offset-2 col-sm-10 btn btn-success" %><br>
-    <%= link_to 'Cancelar', tribunals_path, class: "col-sm-offset-2 col-sm-10 btn btn-info" %>
+    <%= f.submit "Aceptar", class: "col-xs-offset-4 col-xs-2 btn btn-success" %>
+    <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span> Cancelar'.html_safe, tribunals_path, class: "col-xs-offset-1 col-xs-2 btn btn-info" %>
   </div>
+
 <% end %>

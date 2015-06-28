@@ -1,42 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Abogado</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<a href="#" class="navbar-brand">Abogados</a>
-			<ul class="nav navbar-nav">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Archivos<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-			            <li><%= link_to "Clientes", clientes_path %></li>
-			            <li class="divider"></li>
-			            <li><%= link_to "Abogados", abogado_ps_path %></li>
-			            <li class="divider"></li>
-			            <li><%= link_to "Tribunales", tribunals_path %></li>
-			            <li class="divider"></li>
-			            <li><%= link_to "Expedientes", expedientes_path %></li>
+	<header>
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion">
+						<span class="sr-only">Desplegar / Ocultar Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Abogados</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navegacion">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+								Archivos <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+		            <li><%= link_to "Clientes", clientes_path %></li>
+		            <li class="divider"></li>
+		            <li><%= link_to "Abogados", abogado_ps_path %></li>
+		            <li class="divider"></li>
+		            <li><%= link_to "Tribunales", tribunals_path %></li>
 			        </ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Expedientes<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-			            <li><%= link_to "Judiciales" %></li>
-			            <li class="divider"></li>
-			            <li><%= link_to "Extra Judiciales" %></li>
-			        </ul>
-				</li>
-				<li><%= link_to "Agenda" %></li>
-				<li><%= link_to "Configuración" %></li>
-			</ul>
+						</li>
+						<li><%= link_to "Expedientes", expedientes_path %></li>
+						<li><%= link_to "Calendario", calendario_path %></li>
+					</ul>
+
+					<form action="" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Buscar">
+						</div>
+						<button type="submit" class="btn btn-primary">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<%= yield %>
+
+	<div class="modal fade" id="contacto">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Header de la ventana -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Datos de Contacto</h4>
+				</div>
+
+				<!-- Contenido de la ventana -->
+				<div class="modal-body">
+					<p><strong>Télefono:</strong> 0412-8660934</p>
+					<p><strong>Correo:</strong> velasquezleonardo1@gmail.com</p>
+					<p><strong>Skype:</strong> leonardo-velasquez</p>
+					<p><strong>Twitter:</strong> @leovlp</p>
+					<p><strong>Facebook:</strong> /leovlp</p>
+				</div>
+
+				<!-- Footer de la ventana -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
 		</div>
 	</div>
-	<%= yield %>
+
+	<footer id="pie">
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6">
+						<p class="navbar-text pull-left">Sistema desarrollado por <strong>Ing. Leonardo Velasquez</strong></p>
+					</div>
+
+					<div class="col-xs-6">
+						<a href="#contacto" class="navbar-btn btn btn-danger pull-right" data-toggle="modal">Contactar</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</footer>
 
 </body>
 </html>

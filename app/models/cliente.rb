@@ -11,8 +11,8 @@ class Cliente < ActiveRecord::Base
 						 format: {with: /[0-9]/, message: "solo debe contener números"}
 	CORREO_VALIDO = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :correo, presence: {message: "no puede estar vacio"},
-					   format: {:with => CORREO_VALIDO, message: "El formato del correo es invalido"}
+					   format: {:with => CORREO_VALIDO, message: "el formato es invalido"}
 	validates :direccion, presence: {message: "no puede estar vacio"}
 
-	has_many :expedientes
+	has_many :expedientes, dependent: :destroy
 end

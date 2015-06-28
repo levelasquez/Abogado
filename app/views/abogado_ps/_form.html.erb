@@ -1,41 +1,68 @@
-<%= form_for(@abogado_p, class: "form-horizontal") do |f| %>
-  <% if @abogado_p.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@abogado_p.errors.count, "error") %> antes de guardar:</h2>
+<%= form_for(@abogado_p, html: { class: "form-horizontal" }) do |f| %>
 
-      <ul>
-      <% @abogado_p.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% if @abogado_p.errors.any? %>
+    <div class="col-xs-11 col-xs-offset-1">
+        <div id="error_explanation" class="panel panel-danger">
+          <div class="panel-heading">
+            <%= pluralize(@abogado_p.errors.count, "errore") %> antes de guardar:
+          </div>
+            
+          <div class="panel-body">
+            <ul>
+            <% @abogado_p.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
   <% end %>
+
     <div class="form-group">
-      <%= f.label :nombre, class: "col-sm-2 control-label" %>
-      <%= f.text_field :nombre, class: "col-sm-10 form-contol" %><br>
+      <%= f.label :nombre, class: "col-xs-2 control-label" %>
+      <div class="col-xs-10">
+        <%= f.text_field :nombre, placeholder: "Nombre", class: "form-control" %>
+      </div>
     </div>
+
     <div class="form-group">
-      <%= f.label :apellido, class: "col-sm-2 control-label" %>
-      <%= f.text_field :apellido, class: "col-sm-10 form-contol" %><br>
+      <%= f.label :apellido, class: "col-xs-2 control-label" %>
+      <div class="col-xs-10">
+        <%= f.text_field :apellido, placeholder: "Apellido", class: "form-control" %>
+      </div>
     </div>
+
   <div class="form-group">
-    <%= f.label :cedula, class: "col-sm-2 control-label" %>
-    <%= f.text_field :cedula, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :cedula, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :cedula, placeholder: "Cedula", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :ipsa, class: "col-sm-2 control-label" %>
-    <%= f.text_field :ipsa, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :ipsa, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :ipsa, placeholder: "Ipsa", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :telefono, class: "col-sm-2 control-label" %>
-    <%= f.text_field :telefono, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :telefono, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :telefono, placeholder: "Telefono", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :direccion, class: "col-sm-2 control-label" %>
-    <%= f.text_area :direccion, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :direccion, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_area :direccion, placeholder: "Direccion", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.submit "Aceptar", class: "col-sm-offset-2 col-sm-10 btn btn-success" %><br>
-    <%= link_to 'Cancelar', abogado_ps_path, class: "col-sm-offset-2 col-sm-10 btn btn-info" %>
+    <%= f.submit "Aceptar", class: "col-xs-offset-4 col-xs-2 btn btn-success" %>
+    <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span> Cancelar'.html_safe, abogado_ps_path, class: "col-xs-offset-1 col-xs-2 btn btn-info" %>
   </div>
+
 <% end %>

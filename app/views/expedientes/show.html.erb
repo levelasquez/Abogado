@@ -1,44 +1,50 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Clientes:</strong>
-  <%= @expediente.cliente %>
-</p>
-
-<p>
-  <strong>Cliente:</strong>
-  <%= @expediente.cliente_id %>
-</p>
-
-<p>
-  <strong>Expediente:</strong>
-  <%= @expediente.expediente %>
-</p>
-
-<p>
-  <strong>Area:</strong>
-  <%= @expediente.area %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @expediente.descripcion %>
-</p>
-
-<p>
-  <strong>Victima:</strong>
-  <%= @expediente.victima %>
-</p>
-
-<p>
-  <strong>Imputado:</strong>
-  <%= @expediente.imputado %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @expediente.status %>
-</p>
-
-<%= link_to 'Edit', edit_cliente_expediente_path(@cliente, @expediente) %> |
-<%= link_to 'Back', expedientes_path %>
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Expediente</h1>
+    <% if flash[:notice] %>
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-condensed">
+          <thead>
+            <tr class="info">
+              <th>Cliente</th>
+              <th>Expediente</th>
+              <th>Area</th>
+              <th>Descripcion</th>
+              <th>Victima</th>
+              <th>Estatus</th>
+              <th colspan="2">Opciones</th>
+            </tr>
+          </thead>
+      
+          <tbody>
+              <tr>
+                <td><%= @expediente.imputado %></td>
+                <td><%= @expediente.expediente %></td>
+                <td><%= @expediente.area %></td>
+                <td><%= @expediente.descripcion %></td>
+                <td><%= @expediente.victima %></td>
+                <td><% if @expediente.status == 1 %>
+                      <%= "Abierto" %>
+                    <% else %>
+                      <%= "Cerrado" %>
+                  <% end %></td>
+                <td><%= link_to '<span class="glyphicon glyphicon-pencil"></span> Editar'.html_safe, edit_cliente_expediente_path(@cliente, @expediente), class: "col-xs-12 btn btn-warning" %></td>
+                <td><%= link_to '<span class="glyphicon glyphicon-trash"></span> Eliminar'.html_safe, cliente_expediente_path(@cliente, @expediente), class: "col-xs-12 btn btn-danger", method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="text-center">Actuaciones</h1>
+  </div>
+  <div class="row">
+    <%= link_to '<span class="glyphicon glyphicon-list-alt"></span> Nueva Actuacion'.html_safe, {}, class: "col-xs-offset-4 col-xs-2 btn btn-success" %>
+    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Regresar'.html_safe, cliente_path(@cliente), class: "col-xs-offset-1 col-xs-1 btn btn-info"%>
+  </div>
+</div>

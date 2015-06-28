@@ -12,5 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
+ *= require bootstrap
  */
-body { padding-top: 70px; }
+body{ 
+  padding-top: 70px;
+}

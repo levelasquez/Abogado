@@ -1,84 +1,101 @@
 == Sistema Automatizado de Control de Casos para Abogados
 
-El sistema esta diseñado para llevar el control de los casos de los clientes. El Sistema está hecho con Ruby on Rails 4.1.8.
+El sistema esta diseñado para llevar el control de los casos de los clientes. El Sistema está siendo desarrollado con Ruby on Rails 4.1.8.
 
 Sistema libre para ser usado por cualquiera.
 
-<tt>En Desarrollo...</tt>
+<tt>Actualmente en desarrollo...</tt>
 
 == Version 0.0.1
 
-* Creación del proyecto.
+## Creación del proyecto.
+
+1. Ruby on Rails 4.1.8 instalada y configurado.
+2. Archivos base del proyecto.
 
 == Versión 0.1.0
 
-Modificado/a:
+## Modificado/a:
 
-* Rutas de acceso.
-* Css de la aplicación principal.
-* Vista de la aplicación principal.
+1. Rutas de acceso.
+2. Css de la aplicación principal.
+3. Vista de la aplicación principal.
 
-Añadido/a:
+## Añadido/a:
 
-* Menú principal.
-* Bootstrap. css - js - fonts.
-* Modulo de abogados:
-* Modulo de abogados: {
-	* Nueva tabla a la base de datos. "abogado_ps".
-	* Mostar - crear - editar y eliminar abogados.
-	* Validaciones para abogados.
-	* Mensajes de alerta y noticifación para abogados.
-}
+1. Menú principal.
+2. Bootstrap. css - js - fonts.
+3. Modulo de abogados:
+		* Nueva tabla a la base de datos. "abogado_ps".
+		* Mostar - crear - editar y eliminar abogados.
+		* Validaciones para abogados.
+		* Mensajes de alerta y noticifación para abogados.
 
-Eliminado/a:
+## Eliminado/a:
 
-* Css del scaffold de abogados.
+1. Css del scaffold de abogados.
 
 == Versión 0.2.0
 
-Modificado/a:
+## Modificado/a:
 
-* Rutas de acceso.
-* Tablas en la base de datos.
-* Vista principal de la aplicación.
+1. Rutas de acceso.
+2. Tablas en la base de datos.
+3. Vista principal de la aplicación.
 
-Añadido/a:
+## Añadido/a:
 
-* Módulo de tribunales:
-	* Nueva tabla en la base de datos. "tribunals".
-	* Mostrar - crear - editar y eliminar tribunales.
-	* Validaciones para tribunales.
-	* Mensajes de alerta y notificación para tribunales.
+1. Módulo de tribunales:
+		* Nueva tabla en la base de datos. "tribunals".
+		* Mostrar - crear - editar y eliminar tribunales.
+		* Validaciones para tribunales.
+		* Mensajes de alerta y notificación para tribunales.
 
 == Versión 0.3.0
 
-Modificado/a:
+## Modificado/a:
 
-* Validaciones para el modelo de abogado_p.
-* Vista principal de la aplicación.
-* Rutas de acceso.
-* Tablas en la base de datos.
+1. Validaciones para el modelo de abogado_p.
+2. Vista principal de la aplicación.
+3. Rutas de acceso.
+4. Tablas en la base de datos.
 
-Añadido/a:
+## Añadido/a:
 
-* Módulo de clientes:
-	1. Nueva tabla en la base de datos. "clientes".
-	2. Mostrar - crear - editar y eliminar clientes.
-	3. Validaciones para clientes.
-	4. Mensajes de alerta y notificación para clientes.
+1. Módulo de clientes:
+		* Nueva tabla en la base de datos. "clientes".
+		* Mostrar - crear - editar y eliminar clientes.
+		* Validaciones para clientes.
+		* Mensajes de alerta y notificación para clientes.
 
 == Versión 0.4.0
 
-Modificado/a:
+## Modificado/a:
 
 1. Modelo, vista y controlador de clientes para trabajar con los expedientes anidados.
 2. Vista principal de la aplicación.
 3. Rutas para trabajar con los expedientes anidados en clientes.
 
-Añadido/a:
+## Añadido/a:
 
 1. Módulo de expedientes:
-	* Nueva tabla en la base de datos. "expedientes".
-	* Mostar - crear - editar y eliminar expedientes.
-	* Validaciones para expedientes.
-	* Mensajes de alerta y notificacion para expedientes.
+		* Nueva tabla en la base de datos. "expedientes".
+		* Mostar - crear - editar y eliminar expedientes.
+		* Validaciones para expedientes.
+		* Mensajes de alerta y notificacion para expedientes.
+
+== Versión 0.4.1
+
+## Modificado/a:
+
+1. Vistas para todos los modulos.
+2. Rutas de acceso.
+
+## Añadido/a:
+
+1. Nueva fuente.
+2. Calendario.
+
+## Eliminado/a:
+
+1. Fuente anterior.

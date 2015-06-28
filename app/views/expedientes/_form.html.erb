@@ -1,4 +1,5 @@
-<%= form_for([@cliente, @expediente]) do |f| %>
+<%= form_for([@cliente, @expediente], html: { class: "form-horizontal" }) do |f| %>
+
   <% if @expediente.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@expediente.errors.count, "errore") %> antes de guardar:</h2>
@@ -12,28 +13,45 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :expediente, class: "col-sm-2 control-label" %>
-    <%= f.text_field :expediente, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :expediente, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :expediente, placeholder: "Numero de expediente", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :area, class: "col-sm-2 control-label" %>
-    <%= f.select :area, options_for_select([["Administrativo"], ["Agrario"], ["Civil"], ["Contensioso"], ["Laboral"], ["Lopnna"], ["Mercantil"], ["Penal"]]), class: "col-sm-10 form-contol" %><br>
+    <%= f.label :area, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.select :area, options_for_select([["Administrativo"], ["Agrario"], ["Civil"], ["Contensioso"], ["Laboral"], ["Lopnna"], ["Mercantil"], ["Penal"]]), {}, {class: "form-control"} %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :descripcion, class: "col-sm-2 control-label" %>
-    <%= f.text_area :descripcion, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :descripcion, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_area :descripcion, placeholder: "Descripcion", class: "form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :victima, class: "col-sm-2 control-label" %>
-    <%= f.text_field :victima, class: "col-sm-10 form-contol" %><br>
+    <%= f.label :victima, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :victima, placeholder: "Nombre y Apellido", class: "form-control" %>
+    </div>
   </div>
+
     <%= f.hidden_field :imputado, :value => @cliente.nombre + " " + @cliente.apellido %>
+
   <div class="form-group">
-    <%= f.label :status, class: "col-sm-2 control-label" %>
-    <%= f.select :status, options_for_select([["Abierto",1], ["Cerrado",2]]) ,class: "col-sm-10 form-contol" %><br>
+    <%= f.label :status, class: "col-xs-2 control-label" %>
+    <div class="col-xs-10">
+      <%= f.select :status, options_for_select([["Abierto",1], ["Cerrado",2]]), {}, {class: "form-control"} %>
+    </div>
   </div>
+
   <div class="form-group">
-    <%= f.submit "Aceptar", class: "col-sm-offset-2 col-sm-10 btn btn-success" %>
-    <%= link_to 'Cancelar', @cliente, class: "col-sm-offset-2 col-sm-10 btn btn-info" %>
+    <%= f.submit "Aceptar", class: "col-xs-offset-4 col-xs-2 btn btn-success" %>
+    <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span> Cancelar'.html_safe, cliente_expediente_path(@cliente, @expediente), class: "col-xs-offset-1 col-xs-2 btn btn-info" %>
   </div>
+
 <% end %>

@@ -1,39 +1,43 @@
 <div class="container">
-  <h1>Lista de Expedientes</h1>
-  <% if flash[:notice] %>
-    <div class="alert alert-success alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <%= flash[:notice] %>
+  <div class="row">
+    <h1>Lista de Expedientes</h1>
+    <% if flash[:notice] %>
+      <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover tabla-condensed">
+        <thead>
+          <tr class="info">
+            <th>Expediente</th>
+            <th>Imputado</th>
+            <th>Victima</th>
+            <th>Area</th>
+            <th>Descripcion</th>
+            <th>Estatus</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @expedientes.each do |expediente| %>
+            <tr>
+              <td><%= expediente.expediente %></td>
+              <td><%= expediente.imputado %></td>
+              <td><%= expediente.victima %></td>
+              <td><%= expediente.area %></td>
+              <td><%= expediente.descripcion %></td>
+              <td><% if expediente.status == 1 %>
+                      <%= "Abierto" %>
+                    <% else %>
+                      <%= "Cerrado" %>
+                  <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
-  <% end %>
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>Expediente</th>
-        <th>Imputado</th>
-        <th>Victima</th>
-        <th>Area</th>
-        <th>Descripcion</th>
-        <th>Estatus</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @expedientes.each do |expediente| %>
-        <tr>
-          <td><%= expediente.expediente %></td>
-          <td><%= expediente.imputado %></td>
-          <td><%= expediente.victima %></td>
-          <td><%= expediente.area %></td>
-          <td><%= expediente.descripcion %></td>
-          <td><% if expediente.status == 1 %>
-                  <%= "Abierto" %>
-                <% else %>
-                  <%= "Cerrado" %>
-              <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  </div>
 </div>
